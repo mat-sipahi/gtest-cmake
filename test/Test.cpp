@@ -1,9 +1,8 @@
 #include <gtest/gtest.h>
 #include "../src/abc.hpp"
 
-
 // Test fixture
-class BASE_TEST_SUITE : public testing::Test {
+struct BaseTestSuite : public testing::Test {
     void SetUp() override {
     }
 
@@ -12,12 +11,11 @@ class BASE_TEST_SUITE : public testing::Test {
 };
 
 // Derived test
-TEST_F(BASE_TEST_SUITE, ExmapleTest) { 
-        EXPECT_EQ(1, 0) << "Derived test 111";
+TEST_F(BaseTestSuite, ExmapleTest) { 
+        EXPECT_EQ(111, 111) << "Derived test";
 }
 
 // Standalone test
 TEST(SAMPLE_TEST_SUITE, ExmapleTest) { 
-    EXPECT_TRUE(false) << "Standalone test 222";
-    EXPECT_EQ(1, 0) << "Standalone test 333";
+    EXPECT_EQ(22, 22) << "Standalone test";
 }

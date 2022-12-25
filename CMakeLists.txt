@@ -6,6 +6,10 @@ set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+# github submodules
+# include(AddGitSubmodule.cmake)
+# add_git_submodule(my_submod_dir)
+
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -16,7 +20,6 @@ FetchContent_MakeAvailable(googletest)
 
 include(CTest)
 enable_testing()
-# add_subdirectory(googletest)
 add_subdirectory(test)
 
 add_executable(${this} src/main.cpp)
